@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "commmander": "^0.0.1-security",
+    "ejs": "^2.6.2",
+    "mime": "^2.4.4",
+    "mz": "^2.7.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "http-proxy": "^1.17.0"
+  }
+}

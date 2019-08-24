@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>headers</title>
+</head>
+<body>
+    <select name="lan" id="lan">
+        <option value="en">英文</option>
+        <option value="cn">中文</option>
+    </select>
+    <p id='content'></p>
+    <script>
+        // 
+        document.getElementById('lan').addEventListener('change',(e)=>{
+            let value=e.target.value
+            const controller = new AbortController();
+            const controller1 = new AbortController();
+            const controller2= new AbortController();
+            console.log(controller1.signal == controller2.signal)
+            const signal = controller.signal;
+            // fetch(`http://127.0.0.1:3001/lan?name=${value}`,{signal,redirect :"manual"}).then(res=>{
+            fetch(`http://127.0.0.1:3001/lan?name=${value}`,{signal,redirect :"error"}).then(res=>{
+                console.log(res)
+                return res
+            }).catch(e=>{
+                console.log(e,'----')
+            })
+
+            setTimeout(() => controller.abort(), 500);
+            return
+            let xhr;
+            if(window.XMLHttpRequest){
+                xhr= new XMLHttpRequest()
+            }else{
+                xhr = new ActiveXObject('Microsoft.XMLHTTP')
+            }
+            xhr.onreadystatechange=()=>{
+                console.log(xhr.readyState)
+                console.log(xhr)
+            }
+            xhr.open('get',`http://127.0.0.1:3001/lan?name=${value}`) //1
+            xhr.send() //2 
+                        //3 loading
+                        //4 done
+            xhr.onprogress = function () {
+                console.log('LOADING', xhr.readyState); // readyState 为 3
+            };
+
+            xhr.onload = function () {
+                console.log('DONE', xhr.readyState); // readyState 为 4
+            };
+            xhr.upload.onabort=function(){
+                console.log('放弃')
+            }
+            // xhr.abort();
+            // xhr.timeout = 1000; // 超时时间，单位是毫秒
+            xhr.upload.ontimeout = function (e) {
+                console.log('超时')
+            } // XMLHttpRequest 超时。在此做某事。
+            //xhr.upload onprogress onabort ontimeout onloadend onload
+          
+        })
+    </script>
+</body>
+</html>

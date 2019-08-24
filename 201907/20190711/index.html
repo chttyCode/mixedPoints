@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select name="language" id="lan">
+        <option value="zh-CN;q=1,fr;q=0.9,en;q=0.1">中文</option>
+        <option value="zh-CN;q=0.1,fr;q=0.9,en;q=1">英文</option>
+    </select>
+    <p id= 'content'></p>
+    <script>
+        let xhr;
+        if(window.XMLHttpRequest){
+            xhr=new XMLHttpRequest()
+        }else{
+            xhr = new ActiveXObject('Microsoft.XMLHTTP')
+        }
+        document.getElementById('lan').addEventListener('change',function(e){
+            xhr.open('get','http://127.0.0.1:3003')
+            xhr.setRequestHeader("accept-language", e.target.value);
+            xhr.send()
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4){
+                    if(xhr.status == 200){
+                    document.getElementById('content').innerHTML=xhr.responseText
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

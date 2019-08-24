@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history</title>
+</head>
+<body>
+        <button onclick="goto('/a')">/a</button>
+        <button onclick="goto('/b')">/b</button>
+        <div id="root">
+    
+        </div>
+        <script>
+            (function(history){
+                let oldPush=window.history.pushState
+                window.history.pushState = function(state,title,path){
+                    oldPush.call(history,state,title,path)
+                    window.onpushstate&&window.onpushstate(state,title,path)
+                }
+            })(history)
+            // let oldPush=window.history.pushState
+            // window.history.pushState = function(state,title,path){
+            //     oldPush.call(history,state,title,path)
+            //     window.onpushstate&&window.onpushstate(state,title,path)
+            // }
+            // 监听pop事件
+            window.onpopstate=window.onpushstate=function(e){
+                console.log(e)
+                let root = document.getElementById('root')
+                // root.innerHTML = e.currentTarget.location.pathname
+                root.innerHTML = location.pathname
+            }
+           
+            // setTimeout(()=>{
+            //     history.pushState({page:1},'page1','/page1')
+            // },1000)
+            // setTimeout(()=>{
+            //     history.pushState({page:2},'page2','/page2')
+            // },2000)
+            // setTimeout(()=>{
+            //     history.pushState({page:3},'page3','/page3')
+            // },3000)
+            // setTimeout(()=>{
+            //     history.replaceState({page:4},'page4','/page4')
+            // },3000)
+            // setTimeout(()=>{
+            //     history.back()
+            // },4000)
+            function goto(path){
+                history.pushState({path},path,path)
+            }
+        </script>
+</body>
+</html>

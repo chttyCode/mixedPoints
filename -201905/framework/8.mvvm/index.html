@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head><title>mvvm</title></head>
+    <body>
+        <div id='app'>
+            {{a}}
+            <p>firstchild{{a}}</p>
+            <p>lastChild{{b.c}}</p>
+            <p>姓名{{d}}</p>
+            <p>{{hello}}</p>
+            <input type="text"v-mode='a'>
+            <input type="text"v-mode='d'>
+        </div>
+    </body>
+    <script src='./index.js'></script>
+    <script>
+        const vm= new Vue({
+            el:'#app',
+            data:{
+                a:'data的A值',
+                b:{
+                    c:'data的c值'
+                },
+                d:'哈哈哈'
+            },
+            computed:{
+                hello(){
+                    return this.a+this.d
+                }
+            }
+        })
+    </script>
+</html>

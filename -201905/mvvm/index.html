@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>mvvm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+    <div id="app">
+        {{c}}
+        <p>a的值{{a.a}}</p>
+        <p>{{b}}
+            <p>b的值{{b}}</p>
+            <p>b-child的值{{b}} <p>a的值{{a.a}}</p></p>
+        </p>
+        <p>{{d}}</p>
+        <p>{{hello}}</p>
+        <input type="text" v-mode={d}>
+        <input type="text" v-mode={a.a}>
+    </div>
+    <script src='./index.js'></script>
+</body>
+<script>
+    const mvvm = new Mvvm({
+        el: '#app',
+        data: {
+            a: {
+                a: 1
+            },
+            b: 2,
+            c:'this is mvvm',
+            d:'this is a input'
+        },
+        computed:{
+            hello(){
+                return this.d+this.c
+            }
+        }
+    })
+</script>
+
+</html>

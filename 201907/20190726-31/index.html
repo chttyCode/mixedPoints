@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CORS</title>
+</head>
+<body>
+    <input type="text" id = 'input' >
+    <button id = 'button'>get value </button>
+    <script>
+        let xhr;
+        document.cookie = 'age=xxxx'
+        document.getElementById('button').addEventListener('click',()=>{
+            if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest()
+            }else{
+                xhr = new ActiveXObject('Microsoft.XMLHTTP ')
+            }
+            xhr.withCredentials = true; // 强制跨域携带cookie
+            xhr.onreadystatechange=()=>{
+                console.log(xhr)
+                console.log(xhr.status)
+                console.log(xhr.readyState)
+            }
+            xhr.open('get','http://127.0.0.1:3001')
+            // xhr.open('delete','http://localhost:3001/user',true);
+            xhr.send()
+        })
+    </script>
+</body>
+</html>

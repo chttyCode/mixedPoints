@@ -1,0 +1,26 @@
+<html>
+    <script>
+  function deepClone(obj){
+    if(obj == null)return obj
+    if(obj instanceof RegExp)return new RegExp(obj)
+    if(obj instanceof Date)return new Date(obj)
+    if(typeof obj!= 'object')return obj
+    let cloneobj=new obj.constructor()
+    for(let key in obj){
+        if(obj.hasOwnProperty(key)){
+            cloneobj[key]=deepClone(obj[key])
+        }
+    }
+    return cloneobj
+}
+let my={name:'js',id:'1'}
+let obj1={...my} 
+let obj2=Object.assign({},my)
+let obj3=deepClone(my)
+my.id='2'
+// console.log(obj3.address == my.address)
+console.log(obj1)
+// console.log(obj2)
+console.log(obj3)
+    </script>
+</html>

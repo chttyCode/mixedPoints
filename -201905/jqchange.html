@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>jqclick</title>
+</head>
+
+<body>
+    <input type="checkbox" name="cbox" class="A"> 1
+    <input type="checkbox" name="cbox" class="A"> 3
+    <input type="checkbox" name="cbox" class="B"> 4
+    <input type="checkbox" name="cbox" class="B"> 4
+    <input type="checkbox" name="cbox" class="C"> 4
+    <input type="checkbox" name="cbox" class="C"> 20
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    $('.A').change(function () {
+        // doesn't get called
+        console.log('组事件A')
+    });
+
+    $('.B').change(function () {
+        // doesn't get called
+        console.log('组事件B')
+    });
+
+    $('.C').change(function () {
+        // doesn't get called
+        console.log('组事件C')
+    });
+
+    $('.D').change(function () {
+        // doesn't get called
+        console.log('d')
+    });
+
+    $('.E').change(function () {
+        // doesn't get called
+        console.log('e')
+    });
+
+    $('.F').change(function () {
+        // doesn't get called
+        console.log('f')
+    });
+
+    $('input[name="cbox"]').change(function () {
+        // this one gets called
+        console.log('自身事件')
+    });
+
+    $('input[name="cbox"]').change();
+</script>
+
+</html>

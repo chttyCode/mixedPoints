@@ -1,0 +1,10 @@
+Object.assign
+Object.create
+Object.entries
+Object.keys
+Object.values
+Object.fromEntries
+Object.is
+Object.apply
+Object.bind
+Object.call

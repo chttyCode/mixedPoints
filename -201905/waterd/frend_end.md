@@ -1,0 +1,43 @@
+# problem
+
+- 事件原理，
+- 闭包，
+- 调用栈，
+- Promise，
+- ES6，
+- 工程化，
+- webpack, 
+- 性能优化，
+- 跨域，
+- 安全问题， 
+- React、Redux 思想，Virtual DOM，Diff 算法， 
+- 移动端布局，浏览器渲染原理，Event Loop
+
+- 调用堆栈
+- 作用域闭包
+- this全面解析
+- 深浅拷贝原理
+- 原型Prototype
+- 高阶函数
+- 事件机制
+- Event Loop原理
+- Promise原理
+- Async/Await原理
+- 防抖/节流原理
+- 模块化详解
+- ES6重难点
+- 计算机网络概述
+- 浏览器渲染原理
+- webpack配置
+- webpack原理
+- 前端监控
+- 跨域和安全
+- 性能优化
+- VirtualDom原理
+- Diff算法
+- MVVM双向绑定
+- Vuex原理
+- Redux原理
+- 路由原理
+- VueRouter源码解析
+- ReactRouter源码解析

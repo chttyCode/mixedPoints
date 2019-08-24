@@ -1,0 +1,190 @@
+<html>
+    <title>布局</title>
+    <style>
+        html *{
+            padding: 0;
+            margin: 0;
+        }
+        .layout{
+            margin-top: 20px;
+        }
+        .layout>div{
+            min-height: 100px;
+            margin-top: 20px;
+        }
+        .layout-float .left{
+            float:left;
+            width: 300px;
+            background: red;
+        }
+        .layout-float .right{
+            float:right;
+            width: 300px;
+            background: blue;
+        }
+        .layout-float .center{
+            margin-left:300px;
+            margin-right:300px;
+            background: yellow;
+        }
+        .layout-absoulte{
+            position: relative;
+        }
+        .layout-absoulte .left{
+            position: absolute;
+            left: 0;
+            width: 300px;
+            background: red;
+        }
+        .layout-absoulte .right{
+            position: absolute;
+            right: 0;
+            width: 300px;
+            background: blue;
+        }
+        .layout-absoulte .center{
+            margin-left:300px;
+            margin-right:300px;
+            background: yellow;
+        }
+        .layout-flex{
+            display: flex;
+        }
+        .layout-flex .left{
+            width: 300px;
+            background: red;
+        }
+        .layout-flex .right{
+            width: 300px;
+            background: blue;
+        }
+        .layout-flex .center{
+            flex: 1;
+            background: yellow;
+        }
+        .layout-table{
+            display: table;
+            width: 100%;
+        }
+        .layout-table>div{
+            display: table-cell;
+        }
+        .layout-table .left{
+            width: 300px;
+            background: red;
+        }
+        .layout-table .right{
+            width: 300px;
+            background: blue;
+        }
+        .layout-table .center{
+            background: yellow;
+        }
+        .layout-grid{
+            display: grid;
+            grid-template-columns: 300px  auto 300px;
+            grid-template-rows:100px;
+        }
+        .layout-grid .left{
+            width: 300px;
+            background: red;
+        }
+        .layout-grid .right{
+            width: 300px;
+            background: blue;
+        }
+        .layout-grid .center{
+            background: yellow;
+        }
+    </style>
+    <body>
+        <!-- float -->
+        <article class="layout layout-float">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+                <p>这是中间栏</p>
+            </div>
+        </article>
+        <!-- absolute -->
+        <article class="layout layout-absoulte">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="center">
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                    <p>这是中间栏</p>
+                </div>
+        </article>
+        <!-- flex -->
+        <article class="layout layout-flex">
+                <div class="left"></div>
+                <div class="center">
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                    </div>
+                <div class="right"></div>
+        </article>
+        <!-- table -->
+        <article class="layout layout-table">
+                <div class="left"></div>
+                <div class="center">
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                    </div>
+                <div class="right"></div>
+        </article>
+        <!-- grid -->
+        <article class="layout layout-grid">
+                <div class="left"></div>
+                <div class="center">
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                        <p>这是中间栏</p>
+                    </div>
+                <div class="right"></div>
+        </article>
+    </body>
+</html>
