@@ -2,24 +2,30 @@ import React, { Component } from "react";
 
 import RouterContext from '../context'
 
-export default class Router extends Component{
+export default class BrowerRouter extends Component{
     state={
         location:{
-            pathname: window.location.hash.slice(1)|| '/',
+            pathname: '/',
             state:null
         }
     }
-    componentDidMount(){
-        window.addEventListener('hashchange',()=>{
+    componentWillMount(){
+        (function(history){
+            let oldPush=window.history.pushState
+            window.history.pushState = function(state,title,path){
+                oldPush.call(history,state,title,path)
+                window.onpushstate&&window.onpushstate(state,path)
+            }
+        })(window.history)
+        window.onpopstate=window.onpushstate=(state,pathname)=>{
             this.setState({
                 location:{
                     ...this.state.location,
-                    pathname:window.location.hash.slice(1),
-                    state:this.locationState
+                    pathname,
+                    state
                 }
             })
-        })
-        window.location.hash = window.location.hash.slice(1) || '/'
+        }
     }
     render(){
         let that=this
@@ -34,9 +40,9 @@ export default class Router extends Component{
                     if(typeof to === 'object'){
                         let {pathname,state} = to
                         that.locationState=state
-                        return window.location.hash=pathname
+                        return window.history.pushState(state,null,pathname)
                     }
-                    window.location.hash=to
+                    window.history.pushState(null,null,to)
                 },
                 block(message){
                     that.block=message
