@@ -8,10 +8,10 @@ ReactDOM.render((<Router>
     <Link to="/user">user</Link>
     <Switch>
         <Route path = '/' exact component = {Home}></Route>
-        <Authorized path = '/profile' component = {Profile} />
-        {/* <Route path = '/profile' component = {Profile} ></Route> */}
-        {/* <Route path = '/user' component = {User} ></Route> */}
-        <Route path = '/user/:id' component = {User} ></Route>
+        {/* <Authorized path = '/profile' component = {Profile} /> */}
+        <Route path = '/profile' component = {Profile} ></Route>
+        <Route path = '/user' component = {User} ></Route>
+        {/* <Route path = '/user/:id' component = {User} ></Route> */}
         <Redirect from = '/xxx' to = '/'/>
     </Switch>
 

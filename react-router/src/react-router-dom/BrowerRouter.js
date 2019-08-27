@@ -17,11 +17,12 @@ export default class BrowerRouter extends Component{
                 window.onpushstate&&window.onpushstate(state,path)
             }
         })(window.history)
-        window.onpopstate=window.onpushstate=(state,pathname)=>{
+        window.onpopstate=window.onpushstate=(state,path)=>{
+            console.log(state,path)
             this.setState({
                 location:{
                     ...this.state.location,
-                    pathname,
+                    pathname:path||window.location.pathname,
                     state
                 }
             })
@@ -42,6 +43,7 @@ export default class BrowerRouter extends Component{
                         that.locationState=state
                         return window.history.pushState(state,null,pathname)
                     }
+                    console.log(to)
                     window.history.pushState(null,null,to)
                 },
                 block(message){
