@@ -1,4 +1,5 @@
-import {takeEvery,take,put,call,apply,all,select} from 'redux-saga/effects'
+import {take,put,takeEvery,call,apply,all,select} from 'redux-saga/effects'
+
 import * as types from './types'
 
 export function* add(){
@@ -16,7 +17,7 @@ function* watchLog(){
 }
 
 function* watchAsyncAdd(){
-    console.log('一步加一')
+    console.log('开始执行')
     for (let i =0;i<3;i++){
         let action = yield take(types.ASYNCADD)
         console.log(action)
