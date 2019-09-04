@@ -7,5 +7,8 @@ export default {
     asyncAdd(){
         console.log('async action')
         return {type:types.ASYNCADD}
+    },
+    stop(){
+        return {type:types.STOP}
     }
 }

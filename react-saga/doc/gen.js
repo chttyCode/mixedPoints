@@ -1,11 +1,14 @@
 function* gen (){
-    console.log(0)
-    let a = yield '1'
-    console.log(a)
-    let b = yield '2'
+    yield 1
+    yield 2
+    yield 3
+    yield 4
 }
 let it = gen()
 
 
-it.next()
-it.next(1)
+console.log(it.next())
+it.return()
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
