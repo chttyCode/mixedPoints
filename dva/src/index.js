@@ -104,7 +104,7 @@ app.model({
             yield put({type:'counter/add'})
             // yield put({type:'add'})
         },
-        *goto(action,{call,put}){
+        *goto(action,{call,put}){ew
             let {payload:{pathname}}=action
             yield put(routerRedux.push(pathname))
         }
