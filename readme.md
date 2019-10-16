@@ -11,7 +11,7 @@
     - javascript js相关积累
     - module 模块化
     - moment moment库的探究
-    - mvvm vuejs的模拟实现
+    - mvvm vuejs的
     - react react相关
     - waterd 更早期的学习记录
 - 0000000
@@ -22,7 +22,7 @@
     - 20190624&20190625
         - node的流学习和实现
     - 20190626
-        - js链表数据结构的模拟实现
+        - js链表数据结构的
     - 20190627
         - react的child map方法的实现解读
         - 各种流的实现
@@ -35,13 +35,13 @@
         - react的forwardRef解读
         - 项目管理
     - 20190703
-        - http-server的模拟实现
+        - http-server的
     - 20190704
-        - http-server的模拟实现    
+        - http-server的    
     - 20190708
         - ritical path
     - 20190709-10
-        - http-server的模拟实现   
+        - http-server的   
         - node 多语言实现
         - react之创建更新
     - 20190712
@@ -76,19 +76,19 @@
         - react messagechannel
         - session
         - sort
-        - node express 模拟实现
+        - node express 
     - 20190815-16
-        - 模式ejs,实现模版解析
-        - node koa 模拟实现
+        - ejs,实现模版解析
+        - node koa 
         - 正则断言
     - 20190817-18
-        - node koa 模拟实现
+        - node koa 
         - 正则梳理
     - 20190820-23
         - react-redux
         - wabpack
-- react-redux 模拟实现
-- react-router 模拟实现
+- react-redux 
+- react-router 
 - server-work serverwork的缓存和通信
 - dva 
 - react-saga 

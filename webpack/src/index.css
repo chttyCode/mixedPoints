@@ -1,0 +1,8 @@
+@import './a.css';
+body{
+    background: red;
+}
+div{
+    display: grid;
+    transform: translate(0)
+}

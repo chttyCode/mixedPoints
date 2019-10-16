@@ -1,0 +1,17 @@
+{
+    "presets": [//执行顺序从上到下
+        ["@babel/preset-env",{
+            "useBuiltIns":"usage",
+            "corejs":2
+        }],
+        "@babel/preset-react",
+        ["@babel/preset-typescript",{
+            "allExtensions":true
+        }]
+    ],
+    "plugins": [//从下往上
+        ["@babel/plugin-proposal-decorators",{ "legacy": true }],//true保留装饰器的用法
+        ["@babel/plugin-proposal-class-properties",{"loose":true}],//loose是否宽松 指定义的方式是this还是defined
+        "@babel/plugin-transform-runtime"
+    ]
+}
