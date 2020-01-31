@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 400px;
+            border: 1px solid red;
+            overflow: auto;
+        }
+
+        #container .content {
+            height: 4000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="content"></div>
+    </div>
+    <script>
+        function throttle(callback, interval) {
+            let last;
+            return function () {
+                let context = this;
+                let args = arguments;
+                let now = Date.now();
+                if (last) {
+                    if (now - last >= interval) {
+                        last = now;
+                        callback.apply(context, args);
+                    }
+                } else {
+                    callback.apply(context, args);
+                    last = now;
+                }
+
+            }
+        }
+        let lastTime = Date.now();
+        const throttle_scroll = throttle(() => {
+            console.log('触发了滚动事件', (Date.now() - lastTime) / 1000);
+        }, 1000);
+        document.getElementById('container').addEventListener('scroll', throttle_scroll);
+    </script>
+</body>
+
+</html>
