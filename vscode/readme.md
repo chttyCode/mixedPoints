@@ -2,7 +2,7 @@
 
 开发工具众多，自己喜欢的才是最好的，我比较钟爱vscode，为了让开发体验更爽，我一直在寻找使之更上一层楼的路上
 
-![Alt text](vscode_pulgins.png)
+![Alt text](vscodepulgins.png)
 
 1. project Manager
     1. install 678,880
