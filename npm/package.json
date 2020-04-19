@@ -1,0 +1,14 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild":" echo Hello ",
+    "build":" echo Hello ",
+    "test": "echo test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
