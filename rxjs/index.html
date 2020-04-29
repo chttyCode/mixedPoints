@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="height">
+    <input type="text" id="width">
+    <!-- https://cn.rx.js.org/ -->
+    <script src="https://unpkg.com/rxjs/bundles/rxjs.umd.min.js"></script>
+    <script>
+        let wd = document.getElementById('height')
+        let ht = document.getElementById('weight')
+        const { range } = rxjs;
+        const { range } = rxjs;
+        const { range } = rxjs;
+        const { map, filter } = rxjs.operators;
+
+        let {observable,fromEvent,combineLatest} = rxjs
+        //map pluckDSD
+        let wd$ = fromEvent(wd,'input').pluck('target','value')
+        let ht$ = fromEvent(ht,'input').pluck('target','value')
+        combineLatest(wd$,ht$,(l,w)=>l*w).subscribe(s=>console.log(s))
+    </script>
+
+</body>
+
+</html>
